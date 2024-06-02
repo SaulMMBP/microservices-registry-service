@@ -6,6 +6,12 @@ spring:
       name: ${RS-USERNAME}
       password: ${RS-PASSWORD}
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 server:
   port: ${RS-PORT:8761}
 
