@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: microservices-registry-service
+  security:
+    user:
+      name: ${RS-USERNAME}
+      password: ${RS-PASSWORD}
+
+server:
+  port: ${RS-PORT:8761}
+
+eureka:
+  instance:
+    hostname: ${RS-HOSTNAME:localhost}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
